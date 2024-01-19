@@ -55,7 +55,7 @@
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jxxghp/MoviePilot&type=Date)](https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png)
+[![Star History Chart](https://api.star-history.com/svg?repos=jxxghp/MoviePilot&type=Date)](https://star-history.com/#jxxghp/MoviePilot)
 
 ## Thanks
 
