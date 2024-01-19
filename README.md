@@ -42,7 +42,7 @@
 - [DDS-Derek/MoviePilot](https://github.com/DDS-Derek/MoviePilot/tree/docs)：MoviePilot常见问题及其解决办法 & 部分自建功能教程
 - [DDS-Derek/wxchat-Docker](https://github.com/DDS-Derek/wxchat-Docker)：MoviePilot微信转发代理
 - [developer-wlj/Windows-MoviePilot](https://github.com/developer-wlj/Windows-MoviePilot)：exe方式运行MoviePilot
-- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins,https://github.com/thsrite/MoviePilot-Plugins,https://github.com/honue/MoviePilot-Plugins,https://github.com/dandkong/MoviePilot-Plugins,https://github.com/Aqr-K/MoviePilot-Plugins,https://github.com/AnjoyLi/MoviePilot-Plugins,https://github.com/WithdewHua/MoviePilot-Plugins,https://github.com/HankunYu/MoviePilot-Plugins,https://github.com/baozaodetudou/MoviePilot-Plugins`
+- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins,https://github.com/thsrite/MoviePilot-Plugins,https://github.com/honue/MoviePilot-Plugins,https://github.com/dandkong/MoviePilot-Plugins,https://github.com/Aqr-K/MoviePilot-Plugins,https://github.com/AnjoyLi/MoviePilot-Plugins,https://github.com/WithdewHua/MoviePilot-Plugins,https://github.com/HankunYu/MoviePilot-Plugins,https://github.com/baozaodetudou/MoviePilot-Plugins,https://github.com/almus2zhang/MoviePilot-Plugins`
   - https://github.com/jxxghp/MoviePilot-Plugins
   - https://github.com/thsrite/MoviePilot-Plugins
   - https://github.com/honue/MoviePilot-Plugins
@@ -52,6 +52,7 @@
   - https://github.com/HankunYu/MoviePilot-Plugins
   - https://github.com/WithdewHua/MoviePilot-Plugins
   - https://github.com/baozaodetudou/MoviePilot-Plugins
+  - https://github.com/almus2zhang/MoviePilot-Plugins
 
 ## Star History
 
