@@ -1,6 +1,8 @@
 - [免责声明](#免责声明)
 - [**MoviePilot 始终坚持**](#moviepilot-始终坚持)
 - [MoviePilot Awesome](#moviepilot-awesome)
+  - [Star History](#star-history)
+  - [Thanks](#thanks)
 - [部署实例](#部署实例)
   - [docker-cli 实例](#docker-cli-实例)
   - [docker-compose 实例](#docker-compose-实例)
@@ -51,6 +53,14 @@
   - https://github.com/WithdewHua/MoviePilot-Plugins
   - https://github.com/baozaodetudou/MoviePilot-Plugins
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=jxxghp/MoviePilot&type=Date)](https://star-history.com/#jxxghp/MoviePilot)
+
+## Thanks
+
+<a href="https://github.com/jxxghp/MoviePilot/graphs/contributors"><img src="https://contrib.rocks/image?repo=jxxghp/MoviePilot"></a>
+
 # 部署实例
 
 ## docker-cli 实例
@@ -71,7 +81,6 @@ docker run -itd \
     -e 'AUTO_UPDATE_RESOURCE=true' \
     -e 'NGINX_PORT=3000' \
     -e 'SUPERUSER=admin' \
-    -e 'SUPERUSER_PASSWORD=password' \
     -e 'WALLPAPER=tmdb' \
     -e 'API_TOKEN=moviepilot' \
     -e 'PROXY_HOST=' \
@@ -102,6 +111,7 @@ docker run -itd \
     -e 'SUBSCRIBE_SEARCH=false' \
     -e 'USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36' \
     -e 'AUTO_DOWNLOAD_USER=' \
+    -e 'FANART_ENABLE=true' \
     -e 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins' \
     -e 'MESSAGER=telegram' \
     -e 'TELEGRAM_TOKEN=xxxxxxxxxxxxx' \
@@ -132,10 +142,13 @@ docker run -itd \
     -e 'TR_PASSWORD=' \
     -e 'MEDIASERVER=emby' \
     -e 'EMBY_HOST=http://emby:8096' \
+    -e 'EMBY_PLAY_HOST=' \
     -e 'EMBY_API_KEY=xxxxxxxxxxxxx' \
     -e 'JELLYFIN_HOST=' \
+    -e 'JELLYFIN_PLAY_HOST' \
     -e 'JELLYFIN_API_KEY=' \
     -e 'PLEX_HOST=' \
+    -e 'PLEX_PLAY_HOST=' \
     -e 'PLEX_TOKEN=' \
     -e 'MEDIASERVER_SYNC_INTERVAL=6' \
     -e 'GITHUB_TOKEN=' \
@@ -179,8 +192,6 @@ services:
             - 'NGINX_PORT=3000'
             # 超级管理员用户名
             - 'SUPERUSER=admin'
-            # 超级管理员初始密码
-            - 'SUPERUSER_PASSWORD=password'
             # 登录首页电影海报，`tmdb`/`bing`，默认`tmdb`
             - 'WALLPAPER=tmdb'
             # API密钥，在媒体服务器Webhook、微信回调等地址配置中需要加上?token=该值，建议修改为复杂字符串
@@ -231,6 +242,8 @@ services:
             - 'SUBSCRIBE_SEARCH=false'
             # 交互搜索自动下载用户ID，使用,分割
             - 'AUTO_DOWNLOAD_USER='
+            # Fanart开关，`true`/`false`，默认`true`，关闭后刮削的图片类型会大幅减少
+            - 'FANART_ENABLE=true'
 
             # 插件市场仓库地址，多个地址使用`,`分隔
             - 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins'
@@ -269,10 +282,13 @@ services:
             # 媒体服务器，支持emby/jellyfin/plex
             - 'MEDIASERVER=emby'
             - 'EMBY_HOST=http://emby:8096'
+            - 'EMBY_PLAY_HOST='
             - 'EMBY_API_KEY=xxxxxxxxxxxxx'
             # - 'JELLYFIN_HOST='
+            # - 'JELLYFIN_PLAY_HOST='
             # - 'JELLYFIN_API_KEY='
             # - 'PLEX_HOST='
+            # - 'PLEX_PLAY_HOST='
             # - 'PLEX_TOKEN='
 
             # 媒体服务器同步间隔（小时），默认`6`，留空则不同步
@@ -283,7 +299,7 @@ services:
             # Github token，提高请求api限流阈值 ghp_****
             - 'GITHUB_TOKEN='
 
-            # 认证站点，认证资源`v1.0.1`支持`iyuu`/`hhclub`/`audiences`/`hddolby`/`zmpt`/`freefarm`/`hdfans`/`wintersakura`/`leaves`/`1ptba`/`icc2022`/`ptlsp`/`xingtan`/`ptvicomo`
+            # 认证站点，认证资源`v1.1.1`支持`iyuu`/`hhclub`/`audiences`/`hddolby`/`zmpt`/`freefarm`/`hdfans`/`wintersakura`/`leaves`/`ptba`：1ptba /`icc2022`/`ptlsp`/`xingtan`/`ptvicomo`/`agsvpt`
             - 'AUTH_SITE=iyuu'
             - 'IYUU_SIGN=xxxxxxxxxxxxx'
             # 大内存模式
