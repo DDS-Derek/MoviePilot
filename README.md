@@ -103,6 +103,7 @@ docker run -itd \
     -e 'DOWNLOAD_SUBTITLE=true' \
     -e 'MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}' \
     -e 'TV_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}' \
+    -e 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins' \
     --log-driver "json-file" \
     --log-opt "max-size=5m" \
     --restart always \
@@ -194,6 +195,8 @@ services:
             - 'MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}'
             # 电视剧重命名格式
             - 'TV_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}'
+            # 插件市场仓库地址，仅支持Github仓库main分支，多个地址使用,分隔
+            - 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins'
         logging:
             driver: json-file
             options:
