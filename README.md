@@ -7,7 +7,6 @@
   - [docker-cli 实例](#docker-cli-实例)
   - [docker-compose 实例](#docker-compose-实例)
   - [UnRaid 配置模板](#unraid-配置模板)
-  - [Win Docker Desktop 实例](#win-docker-desktop-实例)
 - [目录挂载解释](#目录挂载解释)
   - [实例一](#实例一)
   - [实例二 by 群友支持](#实例二-by-群友支持)
@@ -70,92 +69,38 @@
 docker run -itd \
     --name moviepilot \
     --hostname moviepilot \
+    -p 3000:3000 \
     -v /media:/media \
     -v /moviepilot/config:/config \
     -v /moviepilot/core:/moviepilot/.cache/ms-playwright \
     -v /var/run/docker.sock:/var/run/docker.sock:ro \
-    -e 'PUID=1000' \
-    -e 'PGID=1000' \
-    -e 'UMASK=022' \
-    -e 'TZ=Asia/Shanghai' \
-    -e 'MOVIEPILOT_AUTO_UPDATE=release' \
-    -e 'AUTO_UPDATE_RESOURCE=true' \
     -e 'NGINX_PORT=3000' \
-    -e 'SUPERUSER=admin' \
-    -e 'WALLPAPER=tmdb' \
-    -e 'API_TOKEN=moviepilot' \
+    -e 'PORT=3001'
+    -e 'PUID=0' \
+    -e 'PGID=0' \
+    -e 'UMASK=000' \
+    -e 'TZ=Asia/Shanghai' \
     -e 'PROXY_HOST=' \
-    -e 'TMDB_API_DOMAIN=api.themoviedb.org' \
-    -e 'DOWNLOAD_PATH=/media/downloads' \
-    -e 'DOWNLOAD_MOVIE_PATH=/media/downloads/movies' \
-    -e 'DOWNLOAD_TV_PATH=/media/downloads/tv' \
-    -e 'DOWNLOAD_ANIME_PATH=/media/downloads/anime' \
-    -e 'DOWNLOAD_SUBTITLE=false' \
-    -e 'DOWNLOAD_CATEGORY=false' \
-    -e 'DOWNLOADER_MONITOR=true' \
-    -e 'SUBSCRIBE_MODE=spider' \
-    -e 'SUBSCRIBE_RSS_INTERVAL=30' \
-    -e 'SCRAP_METADATA=true' \
-    -e 'SCRAP_FOLLOW_TMDB=true' \
-    -e 'TORRENT_TAG=MOVIEPILOT' \
-    -e 'LIBRARY_PATH=/media' \
-    -e 'LIBRARY_MOVIE_NAME=movies' \
-    -e 'LIBRARY_TV_NAME=tv' \
-    -e 'LIBRARY_ANIME_NAME=anime' \
-    -e 'LIBRARY_CATEGORY=false' \
-    -e 'TRANSFER_TYPE=link' \
-    -e 'OVERWRITE_MODE=size' \
-    -e 'COOKIECLOUD_HOST=http://cookiecloud:8088/cookie' \
-    -e 'COOKIECLOUD_KEY=xxxxxxxxxxxxxxxxx' \
-    -e 'COOKIECLOUD_PASSWORD=xxxxxxxxxxxxxxxx' \
-    -e 'COOKIECLOUD_INTERVAL=20' \
-    -e 'SUBSCRIBE_SEARCH=false' \
-    -e 'USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36' \
-    -e 'AUTO_DOWNLOAD_USER=' \
-    -e 'FANART_ENABLE=true' \
-    -e 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins' \
-    -e 'MESSAGER=telegram' \
-    -e 'TELEGRAM_TOKEN=xxxxxxxxxxxxx' \
-    -e 'TELEGRAM_CHAT_ID=xxxxxxxxxxxxx' \
-    -e 'TELEGRAM_USERS=xxxxxxxxxxxxx' \
-    -e 'TELEGRAM_ADMINS=xxxxxxxxxxxxx' \
-    -e 'WECHAT_CORPID=' \
-    -e 'WECHAT_APP_SECRET=' \
-    -e 'WECHAT_APP_ID=' \
-    -e 'WECHAT_TOKEN=' \
-    -e 'WECHAT_ENCODING_AESKEY=' \
-    -e 'WECHAT_ADMINS=' \
-    -e 'WECHAT_PROXY=' \
-    -e 'SLACK_OAUTH_TOKEN=' \
-    -e 'SLACK_APP_TOKEN=' \
-    -e 'SLACK_CHANNEL=' \
-    -e 'SYNOLOGYCHAT_WEBHOOK=' \
-    -e 'SYNOLOGYCHAT_TOKEN=' \
-    -e 'DOWNLOADER=qbittorrent' \
-    -e 'QB_HOST=http://qbittorrent:8080' \
-    -e 'QB_USER=admin' \
-    -e 'QB_PASSWORD=adminadmin' \
-    -e 'QB_CATEGORY=false' \
-    -e 'QB_SEQUENTIAL=true' \
-    -e 'QB_FORCE_RESUME=false' \
-    -e 'TR_HOST=' \
-    -e 'TR_USER=' \
-    -e 'TR_PASSWORD=' \
-    -e 'MEDIASERVER=emby' \
-    -e 'EMBY_HOST=http://emby:8096' \
-    -e 'EMBY_PLAY_HOST=' \
-    -e 'EMBY_API_KEY=xxxxxxxxxxxxx' \
-    -e 'JELLYFIN_HOST=' \
-    -e 'JELLYFIN_PLAY_HOST' \
-    -e 'JELLYFIN_API_KEY=' \
-    -e 'PLEX_HOST=' \
-    -e 'PLEX_PLAY_HOST=' \
-    -e 'PLEX_TOKEN=' \
-    -e 'MEDIASERVER_SYNC_INTERVAL=6' \
-    -e 'GITHUB_TOKEN=' \
+    -e 'MOVIEPILOT_AUTO_UPDATE=true' \
     -e 'AUTH_SITE=iyuu' \
-    -e 'IYUU_SIGN=xxxxxxxxxxxxx' \
+    -e 'IYUU_SIGN=' \
+    -e 'SUPERUSER=admin' \
+    -e 'API_TOKEN=moviepilot' \
     -e 'BIG_MEMORY_MODE=false' \
+    -e 'GITHUB_TOKEN=' \
+    -e 'DEV=false' \
+    -e 'DEBUG=false' \
+    -e 'AUTO_UPDATE_RESOURCE=true' \
+    -e 'TMDB_API_DOMAIN=api.themoviedb.org' \
+    -e 'TMDB_IMAGE_DOMAIN=image.tmdb.org' \
+    -e 'WALLPAPER=tmdb' \
+    -e 'RECOGNIZE_SOURCE=themoviedb' \
+    -e 'FANART_ENABLE=true' \
+    -e 'SCRAP_SOURCE=themoviedb' \
+    -e 'SCRAP_FOLLOW_TMDB=true' \
+    -e 'AUTO_DOWNLOAD_USER=all' \
+    -e 'OCR_HOST=https://movie-pilot.org' \
+    -e 'DOWNLOAD_SUBTITLE=true' \
     -e 'MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}' \
     -e 'TV_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}' \
     --log-driver "json-file" \
@@ -176,156 +121,85 @@ version: '3.3'
 services:
 
     moviepilot:
+        stdin_open: true
+        tty: true
+        container_name: moviepilot
+        hostname: moviepilot
+        networks:
+            - moviepilot
         ports:
             - target: 3000
               published: 3000
               protocol: tcp
+        volumes:
+            - '/media:/media'
+            - '/moviepilot/config:/config'
+            - '/moviepilot/core:/moviepilot/.cache/ms-playwright'
+            - '/var/run/docker.sock:/var/run/docker.sock:ro'
         environment:
-            - 'PUID=1000'
-            - 'PGID=1000'
-            - 'UMASK=022'
-            - 'TZ=Asia/Shanghai'
-            # 重启更新
-            - 'MOVIEPILOT_AUTO_UPDATE=release'
-            # 自动检测和更新资源包（站点索引及认证等），`true`/`false`，默认`true`，需要能正常连接Github，仅支持Docker
-            - 'AUTO_UPDATE_RESOURCE=true'
-            # WEB服务端口
+            # WEB服务端口，默认3000，可自行修改，不能与API服务端口冲突
             - 'NGINX_PORT=3000'
-            # 超级管理员用户名
-            - 'SUPERUSER=admin'
-            # 登录首页电影海报，`tmdb`/`bing`，默认`tmdb`
-            - 'WALLPAPER=tmdb'
-            # API密钥，在媒体服务器Webhook、微信回调等地址配置中需要加上?token=该值，建议修改为复杂字符串
-            - 'API_TOKEN=moviepilot'
-            # 网络代理（可选）
-            # - 'PROXY_HOST='
-            # TMDB API地址
-            - 'TMDB_API_DOMAIN=api.themoviedb.org'
-            # 下载保存目录
-            - 'DOWNLOAD_PATH=/media/downloads'
-            - 'DOWNLOAD_MOVIE_PATH=/media/downloads/movies'
-            - 'DOWNLOAD_TV_PATH=/media/downloads/tv'
-            - 'DOWNLOAD_ANIME_PATH=/media/downloads/anime'
-            # 下载站点字幕
-            - 'DOWNLOAD_SUBTITLE=false'
-            # 下载二级分类开关
-            - 'DOWNLOAD_CATEGORY=false'
-            # 下载器监控
-            - 'DOWNLOADER_MONITOR=true'
-            - 'SUBSCRIBE_MODE=spider'
-            - 'SUBSCRIBE_RSS_INTERVAL=30'
-            # 刮削入库的媒体文件
-            - 'SCRAP_METADATA=true'
-            - 'SCRAP_FOLLOW_TMDB=true'
-            # 种子标签
-            - 'TORRENT_TAG=MOVIEPILOT'
-            # 媒体库目录
-            - 'LIBRARY_PATH=/media'
-            - 'LIBRARY_MOVIE_NAME=movies'
-            - 'LIBRARY_TV_NAME=tv'
-            - 'LIBRARY_ANIME_NAME=anime'
-            # 媒体库二级分类开关
-            - 'LIBRARY_CATEGORY=false'
-            # 转移方式，支持link/copy/move/softlink
-            - 'TRANSFER_TYPE=link'
-            # 转移覆盖模式，默认为`size`，支持`nerver`/`size`/`always`，分别表示`不覆盖`/`根据文件大小覆盖（大覆盖小）`/`总是覆盖`
-            - 'OVERWRITE_MODE=size'
-            # CookieCloud服务器地址（默认可以不用修改）
-            - 'COOKIECLOUD_HOST=http://cookiecloud:8088/cookie'
-            # CookieCloud用户KEY
-            - 'COOKIECLOUD_KEY=xxxxxxxxxxxxxxxxx'
-            # CookieCloud端对端加密密码
-            - 'COOKIECLOUD_PASSWORD=xxxxxxxxxxxxxxxx'
-            # CookieCloud同步间隔（分钟）
-            - 'COOKIECLOUD_INTERVAL=20'
-            # CookieCloud对应的浏览器UA，可选，设置后可增加连接站点的成功率，同步站点后可以在管理界面中修改
-            - 'USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'
-            - 'SUBSCRIBE_SEARCH=false'
-            # 交互搜索自动下载用户ID，使用,分割
-            - 'AUTO_DOWNLOAD_USER='
-            # Fanart开关，`true`/`false`，默认`true`，关闭后刮削的图片类型会大幅减少
-            - 'FANART_ENABLE=true'
-
-            # 插件市场仓库地址，多个地址使用`,`分隔
-            - 'PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins'
-
-            # 消息通知渠道，支持 telegram/wechat/slack/synologychat
-            - 'MESSAGER=telegram'
-            - 'TELEGRAM_TOKEN=xxxxxxxxxxxxx'
-            - 'TELEGRAM_CHAT_ID=xxxxxxxxxxxxx'
-            - 'TELEGRAM_USERS=xxxxxxxxxxxxx'
-            - 'TELEGRAM_ADMINS=xxxxxxxxxxxxx'
-            # - 'WECHAT_CORPID='
-            # - 'WECHAT_APP_SECRET='
-            # - 'WECHAT_APP_ID='
-            # - 'WECHAT_TOKEN='
-            # - 'WECHAT_ENCODING_AESKEY='
-            # - 'WECHAT_ADMINS='
-            # - 'WECHAT_PROXY='
-            # - 'SLACK_OAUTH_TOKEN='
-            # - 'SLACK_APP_TOKEN='
-            # - 'SLACK_CHANNEL='
-            # - 'SYNOLOGYCHAT_WEBHOOK='
-            # - 'SYNOLOGYCHAT_TOKEN='
-
-            # 下载器，支持qbittorrent/transmission
-            - 'DOWNLOADER=qbittorrent'
-            - 'QB_HOST=http://qbittorrent:8080'
-            - 'QB_USER=admin'
-            - 'QB_PASSWORD=adminadmin'
-            - 'QB_CATEGORY=false'
-            - 'QB_SEQUENTIAL=true'
-            - 'QB_FORCE_RESUME=false'
-            # - 'TR_HOST='
-            # - 'TR_USER='
-            # - 'TR_PASSWORD='
-
-            # 媒体服务器，支持emby/jellyfin/plex
-            - 'MEDIASERVER=emby'
-            - 'EMBY_HOST=http://emby:8096'
-            - 'EMBY_PLAY_HOST='
-            - 'EMBY_API_KEY=xxxxxxxxxxxxx'
-            # - 'JELLYFIN_HOST='
-            # - 'JELLYFIN_PLAY_HOST='
-            # - 'JELLYFIN_API_KEY='
-            # - 'PLEX_HOST='
-            # - 'PLEX_PLAY_HOST='
-            # - 'PLEX_TOKEN='
-
-            # 媒体服务器同步间隔（小时），默认`6`，留空则不同步
-            - 'MEDIASERVER_SYNC_INTERVAL=6'
-            # 媒体服务器同步黑名单，多个媒体库名称使用,分割
-            - 'MEDIASERVER_SYNC_BLACKLIST='
-
-            # Github token，提高请求api限流阈值 ghp_****
-            - 'GITHUB_TOKEN='
-
-            # 认证站点，认证资源`v1.1.1`支持`iyuu`/`hhclub`/`audiences`/`hddolby`/`zmpt`/`freefarm`/`hdfans`/`wintersakura`/`leaves`/`ptba`：1ptba /`icc2022`/`ptlsp`/`xingtan`/`ptvicomo`/`agsvpt`
+            # API服务端口，默认3001，可自行修改，不能与WEB服务端口冲突
+            - 'PORT=3001'
+            # 运行程序用户的uid，默认0
+            - 'PUID=0'
+            # 运行程序用户的gid，默认0
+            - 'PGID=0'
+            # 掩码权限，默认000，可以考虑设置为022
+            - 'UMASK=000'
+            # 时区
+            - 'TZ=Asia/Shanghai'
+            # 重启时自动更新，true/release/dev/false，默认release，需要能正常连接Github 注意：如果出现网络问题可以配置PROXY_HOST
+            - 'MOVIEPILOT_AUTO_UPDATE=true'
+            # 网络代理，访问themoviedb或者重启更新需要使用代理访问，格式为http(s)://ip:port、socks5://user:pass@host:port
+            - 'PROXY_HOST='
+            # 认证站点
             - 'AUTH_SITE=iyuu'
-            - 'IYUU_SIGN=xxxxxxxxxxxxx'
-            # 大内存模式
+            - 'IYUU_SIGN='
+            # 超级管理员用户名，默认admin，安装后使用该用户登录后台管理界面，注意：启动一次后再次修改该值不会生效，除非删除数据库文件！
+            - 'SUPERUSER=admin'
+            # API密钥，默认moviepilot，在媒体服务器Webhook、微信回调等地址配置中需要加上?token=该值，建议修改为复杂字符串
+            - 'API_TOKEN=moviepilot'
+            # 大内存模式，默认为false，开启后会增加缓存数量，占用更多的内存，但响应速度会更快
             - 'BIG_MEMORY_MODE=false'
+            # Github token，提高自动更新、插件安装等请求Github Api的限流阈值，格式：ghp_****
+            - 'GITHUB_TOKEN='
+            # 开发者模式，true/false，默认false，开启后会暂停所有定时任务
+            - 'DEV=false'
+            # debug模式，开启后会输出debug日志
+            - 'DEBUG=false'
+            # 启动时自动检测和更新资源包（站点索引及认证等），true/false，默认true，需要能正常连接Github
+            - 'AUTO_UPDATE_RESOURCE=true'
+            # TMDB API地址，默认api.themoviedb.org，也可配置为api.tmdb.org、tmdb.movie-pilot.org 或其它中转代理服务地址，能连通即可
+            - 'TMDB_API_DOMAIN=api.themoviedb.org'
+            # TMDB图片地址，默认image.tmdb.org，可配置为其它中转代理以加速TMDB图片显示，如：static-mdb.v.geilijiasu.com
+            - 'TMDB_IMAGE_DOMAIN=image.tmdb.org'
+            # 登录首页电影海报，tmdb/bing，默认tmdb
+            - 'WALLPAPER=tmdb'
+            #  媒体信息识别来源，themoviedb/douban，默认themoviedb，使用douban时不支持二级分类
+            - 'RECOGNIZE_SOURCE=themoviedb'
+            # Fanart开关，true/false，默认true，关闭后刮削的图片类型会大幅减少
+            - 'FANART_ENABLE=true'
+            # 刮削元数据及图片使用的数据源，themoviedb/douban，默认themoviedb
+            - 'SCRAP_SOURCE=themoviedb'
+            # 新增已入库媒体是否跟随TMDB信息变化，true/false，默认true，为false时即使TMDB信息变化了也会仍然按历史记录中已入库的信息进行刮削
+            - 'SCRAP_FOLLOW_TMDB=true'
+            # 远程交互搜索时自动择优下载的用户ID（消息通知渠道的用户ID），多个用户使用,分割，设置为 all 代表全部用户自动择优下载，未设置需要手动选择资源或者回复0才自动择优下载
+            - 'AUTO_DOWNLOAD_USER=all'
+            # OCR识别服务器地址，格式：http(s)://ip:port，用于识别站点验证码实现自动登录获取Cookie等，不配置默认使用内建服务器https://movie-pilot.org
+            - 'OCR_HOST=https://movie-pilot.org'
+            # 下载站点字幕，true/false，默认true
+            - 'DOWNLOAD_SUBTITLE=true'
             # 电影重命名格式
             - 'MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}'
             # 电视剧重命名格式
             - 'TV_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}'
-        restart: always
-        stdin_open: true
-        tty: true
-        volumes:
-            - './moviepilot/config:/config'
-            - './moviepilot/core:/moviepilot/.cache/ms-playwright'
-            - '/var/run/docker.sock:/var/run/docker.sock:ro'
-            - './media:/media'
-        networks:
-            - moviepilot
-        hostname: moviepilot
-        container_name: moviepilot
-        image: 'jxxghp/moviepilot:latest'
         logging:
-            driver: "json-file"
+            driver: json-file
             options:
-                max-size: "5m"
+                max-size: 5m
+        restart: always
+        image: jxxghp/moviepilot:latest
 
 networks:
   moviepilot:
@@ -364,29 +238,6 @@ curl -sL https://ghproxy.com/https://raw.githubusercontent.com/DDS-Derek/MoviePi
 > 假设 MoviePilot 中映射宿主机路径`/mnt/user/Files`至docker内路径`/Files`，`DOWNLOAD_PATH`变量填写路径为`/Files/Downloads`（`Downloads`为`Files`下的二级目录，宿主机实际目录则为`/mnt/user/Files/Downloads`）
 > 则Qbt下载器也需要映射一个相同的路径，即映射宿主机路径`/mnt/user/Files/Downloads`至QBT docker内路径`/Files/Downloads`
 
-## Win Docker Desktop 实例
-[docker-desktop.yml](https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/examples/docker-desktop.yml)
-```yaml
-# by 群友支持
-
-    # 首先挂载目录，以F盘为例，只提需要注意的参数，其余参数均按照项目README填写
-
-    volumes:
-      - /F/:/F/ #建议直接挂载磁盘，否则-1报错
-    
-    environment:
-      PUID: 1000
-      PGID: 1000
-      UMASK: 000
-      DOWNLOAD_PATH: 'F:\downloads'   # Win下载器目录，必须与外置下载器目录一致，否则推送下载路径报错
-      LIBRARY_PATH: '/F/media'    # 媒体目录
-      TRANSFER_TYPE: 'link'           # 使用硬连接
-      DOWNLOADER_MONITOR: false       # 设置参数关闭下载器监控，否则会转移两次，路径报错
-
-      # 在插件内安装目录监控，监控 /F/downloads 等挂载进容器的下载目录
-      # 转移模式选择兼容模式
-```
-
 # 目录挂载解释
 
 ## 实例一
@@ -424,8 +275,6 @@ moviepilot目录挂载及相关环境变量设置：
 ## 实例二 by 群友支持
 
 ![](https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/img/hardlink_v_2.jpg)
-
-[docker-compose.yml](https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/examples/docker-compose-hardlink.yml) 实例
 
 # 自建OCR教程
 
