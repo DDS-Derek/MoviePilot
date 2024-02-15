@@ -24,7 +24,6 @@
   <Requires/>
   <Config Name="&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x6838;" Target="/moviepilot" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/disk1/appdata/moviepilot</Config>
   <Config Name="&#x7BA1;&#x7406;&#x5458;&#x7528;&#x6237;&#x540D;" Target="SUPERUSER" Default="admin" Mode="" Description="&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x7406;&#x5458;&#x8D26;&#x6237;&#xFF0C;&#x9ED8;&#x8BA4;admin" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
-  <Config Name="&#x7BA1;&#x7406;&#x5458;&#x5BC6;&#x7801;" Target="SUPERUSER_PASSWORD" Default="password" Mode="" Description="&#x7BA1;&#x7406;&#x5458;&#x767B;&#x9646;&#x5BC6;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;password" Type="Variable" Display="always" Required="true" Mask="true">password</Config>
   <Config Name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;" Target="/config" Default="" Mode="rw" Description="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x6620;&#x5C04;" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/moviepilot/config</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
