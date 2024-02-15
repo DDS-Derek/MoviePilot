@@ -7,9 +7,6 @@
   - [docker-cli 实例](#docker-cli-实例)
   - [docker-compose 实例](#docker-compose-实例)
   - [UnRaid 配置模板](#unraid-配置模板)
-- [目录挂载解释](#目录挂载解释)
-  - [实例一](#实例一)
-  - [实例二 by 群友支持](#实例二-by-群友支持)
 - [自建OCR教程](#自建ocr教程)
   - [1. 搭建OCR服务](#1-搭建ocr服务)
   - [2. 测试服务是否正常](#2-测试服务是否正常)
@@ -236,48 +233,6 @@ curl -sL https://ghproxy.com/https://raw.githubusercontent.com/DDS-Derek/MoviePi
 
 5. <img src="https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/img/5.png" alt="步骤05" width="600">
 依照MoviePilot项目中作者的说明进行修改并填写
-
-**注意事项：Qbt下载器需要映射一个与 MoviePilot 中 `DOWNLOAD_PATH` 变量一样的路径，下方是举例。**
-> 假设 MoviePilot 中映射宿主机路径`/mnt/user/Files`至docker内路径`/Files`，`DOWNLOAD_PATH`变量填写路径为`/Files/Downloads`（`Downloads`为`Files`下的二级目录，宿主机实际目录则为`/mnt/user/Files/Downloads`）
-> 则Qbt下载器也需要映射一个相同的路径，即映射宿主机路径`/mnt/user/Files/Downloads`至QBT docker内路径`/Files/Downloads`
-
-# 目录挂载解释
-
-## 实例一
-
-```bash
-media
-├── downloads
-│   ├── movies
-│   ├── tv
-│   └── anime
-├── movies
-├── tv
-└── anime
-
-media/movies , media/tv 和 media/anime 是硬链接后文件路径
-media/downloads/movies , media/downloads/tv 和 media/downloads/anime 是下载路径
-
-moviepilot目录挂载及相关环境变量设置：
--v ./media:/media
--e DOWNLOAD_PATH=/media/downloads
--e DOWNLOAD_MOVIE_PATH=/media/downloads/movies
--e DOWNLOAD_TV_PATH=/media/downloads/tv
--e DOWNLOAD_ANIME_PATH=/media/downloads/anime
--e LIBRARY_PATH=/media
--e LIBRARY_MOVIE_NAME=/media/movies
--e LIBRARY_TV_NAME=/media/tv
--e LIBRARY_ANIME_NAME=/media/anime
-
-下载器目录挂载：
--v ./media/downloads:/media/downloads
-```
-
-![](https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/img/hardlink_v_1.jpg)
-
-## 实例二 by 群友支持
-
-![](https://raw.githubusercontent.com/DDS-Derek/MoviePilot/docs/img/hardlink_v_2.jpg)
 
 # 自建OCR教程
 
