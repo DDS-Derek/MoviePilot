@@ -38,7 +38,8 @@
 - [DDS-Derek/MoviePilot](https://github.com/DDS-Derek/MoviePilot/tree/docs)：MoviePilot常见问题及其解决办法 & 部分自建功能教程
 - [DDS-Derek/wxchat-Docker](https://github.com/DDS-Derek/wxchat-Docker)：MoviePilot微信转发代理
 - [developer-wlj/Windows-MoviePilot](https://github.com/developer-wlj/Windows-MoviePilot)：exe方式运行MoviePilot
-- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins,https://github.com/thsrite/MoviePilot-Plugins,https://github.com/honue/MoviePilot-Plugins,https://github.com/dandkong/MoviePilot-Plugins,https://github.com/Aqr-K/MoviePilot-Plugins,https://github.com/AnjoyLi/MoviePilot-Plugins,https://github.com/WithdewHua/MoviePilot-Plugins,https://github.com/HankunYu/MoviePilot-Plugins,https://github.com/baozaodetudou/MoviePilot-Plugins,https://github.com/almus2zhang/MoviePilot-Plugins`
+- [PTLSP/MoviePilot-Wechat-PROXY](https://blog.ptlsp.com/moviepilotwechat)：MoviePilot企业微信推送之新手喂饭教程
+- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins,https://github.com/thsrite/MoviePilot-Plugins,https://github.com/honue/MoviePilot-Plugins,https://github.com/dandkong/MoviePilot-Plugins,https://github.com/Aqr-K/MoviePilot-Plugins,https://github.com/AnjoyLi/MoviePilot-Plugins,https://github.com/WithdewHua/MoviePilot-Plugins,https://github.com/HankunYu/MoviePilot-Plugins,https://github.com/baozaodetudou/MoviePilot-Plugins,https://github.com/almus2zhang/MoviePilot-Plugins,https://github.com/Pixel-LH/MoviePilot-Plugins,https://github.com/InfinityPacer/MoviePilot-Plugins,https://github.com/lightolly/MoviePilot-Plugins`
   - https://github.com/jxxghp/MoviePilot-Plugins
   - https://github.com/thsrite/MoviePilot-Plugins
   - https://github.com/honue/MoviePilot-Plugins
@@ -49,6 +50,9 @@
   - https://github.com/WithdewHua/MoviePilot-Plugins
   - https://github.com/baozaodetudou/MoviePilot-Plugins
   - https://github.com/almus2zhang/MoviePilot-Plugins
+  - https://github.com/Pixel-LH/MoviePilot-Plugins
+  - https://github.com/InfinityPacer/MoviePilot-Plugins
+  - https://github.com/lightolly/MoviePilot-Plugins
 
 ## Star History
 
@@ -84,6 +88,8 @@ docker run -itd \
     -e 'SUPERUSER=admin' \
     -e 'API_TOKEN=moviepilot' \
     -e 'BIG_MEMORY_MODE=false' \
+    -e 'DOH_ENABLE=true' \
+    -e 'META_CACHE_EXPIRE=' \
     -e 'GITHUB_TOKEN=' \
     -e 'DEV=false' \
     -e 'DEBUG=false' \
@@ -160,6 +166,10 @@ services:
             - 'API_TOKEN=moviepilot'
             # 大内存模式，默认为false，开启后会增加缓存数量，占用更多的内存，但响应速度会更快
             - 'BIG_MEMORY_MODE=false'
+            # DNS over HTTPS开关，`true`/`false`，默认`true`，开启后会使用DOH对api.themoviedb.org等域名进行解析，以减少被DNS污染的情况，提升网络连通性
+            - 'DOH_ENABLE=true'
+            # 元数据识别缓存过期时间（小时），数字型，不配置或者配置为0时使用系统默认（大内存模式为7天，否则为3天），调大该值可减少themoviedb的访问次数
+            - 'META_CACHE_EXPIRE='
             # Github token，提高自动更新、插件安装等请求Github Api的限流阈值，格式：ghp_****
             - 'GITHUB_TOKEN='
             # 开发者模式，true/false，默认false，开启后会暂停所有定时任务
