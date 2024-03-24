@@ -50,7 +50,7 @@ services:
             - 'API_TOKEN=moviepilot'
             # 大内存模式，默认为false，开启后会增加缓存数量，占用更多的内存，但响应速度会更快
             - 'BIG_MEMORY_MODE=false'
-            # DNS over HTTPS开关，`true`/`false`，默认`true`，开启后会使用DOH对api.themoviedb.org等域名进行解析，以减少被DNS污染的情况，提升网络连通性
+            # DNS over HTTPS开关，true/false，默认true，开启后会使用DOH对api.themoviedb.org等域名进行解析，以减少被DNS污染的情况，提升网络连通性
             - 'DOH_ENABLE=true'
             # 元数据识别缓存过期时间（小时），数字型，不配置或者配置为0时使用系统默认（大内存模式为7天，否则为3天），调大该值可减少themoviedb的访问次数
             - 'META_CACHE_EXPIRE='
@@ -82,6 +82,8 @@ services:
             - 'OCR_HOST=https://movie-pilot.org'
             # 下载站点字幕，true/false，默认true
             - 'DOWNLOAD_SUBTITLE=true'
+            # 搜索时是否使用多个名称搜索，true/false，默认true，开启后会使用多个名称进行搜索，搜索结果会更全面，但会增加搜索时间；关闭时只要其中一个名称搜索到结果或全部名称搜索完毕即停止
+            - 'SEARCH_MULTIPLE_NAME=true'
             # 电影重命名格式
             - 'MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}'
             # 电视剧重命名格式
