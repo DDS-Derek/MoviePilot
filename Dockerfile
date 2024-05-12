@@ -16,7 +16,6 @@ ENV LANG="C.UTF-8" \
     IYUU_SIGN=""
 WORKDIR "/app"
 RUN apt-get update -y \
-    && apt-get upgrade -y \
     && apt-get -y install \
         musl-dev \
         nginx \
