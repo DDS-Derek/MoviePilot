@@ -1,25 +1,38 @@
+/* 桌面端壁纸 API: https://www.dmoe.cc/random.php
+移动端壁纸 API: https://t.mwm.moe/mp */
+
 html {
     background-attachment: fixed;
     background-size: cover;
+    /* 这边是壁纸居中，自己选择是否开启 */
     background-position: center;
     height: 100%;
 }
 @media (min-width: 768px) {
     html {
         /* 桌面端壁纸 */
-        background-image: url(https://www.dmoe.cc/random.php);
+        background-image: url(https://img.ddsrem.com/i/2024/05/24/xdlv1a.webp);
     }
 }
 @media (max-width: 767px) {
     html {
         /* 移动端壁纸 */
-        background-image: url(https://t.mwm.moe/mp);
+        background-image: url(https://img.ddsrem.com/i/2024/05/24/xh9f1g.webp);
     }
 }
 body {
     background: none !important;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+@font-face{
+    font-family:btfFont;
+    src:
+    /* 修改这个地址更改字体 */
+    url(https://blog.ddsrem.com/upload/2023/03/13.woff2) format('woff2')
+}
+body{
+    font-family:"btfFont" !important
 }
 body, #app, .v-application {
     height: 100% !important;
@@ -35,22 +48,24 @@ body, #app, .v-application {
 ::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1aa !important;
 }
-/*.v-theme--light {*/
-/*    --v-theme-background: 244,245,250,0.3;*/
-/*    --v-theme-surface: 255,255,255,0.3;*/
-/*}*/
-/*.v-theme--dark {*/
-/*    --v-theme-background: 17,24,39,0.3;*/
-/*    --v-theme-surface: 22,29,44,0.3;*/
-/*}*/
-/*.v-theme--purple {*/
-/*    --v-theme-background: 40,36,61,0.3;*/
-/*    --v-theme-surface: 49,45,75,0.3;*/
-/*}*/
-/*.v-theme--light, .v-theme--dark, .v-theme--purple {*/
-/*    --v-theme-primary: 110,102,237,0.8;*/
-/*    --v-theme-primary: 87,76,255,0.8;*/
-/*}*/
+/* 下面这段是控制是否使用透明卡片，自行选择 */
+/* 更改背景亮度可以调整RGBA值中的第四个参数（范围为0到1） */
+/* .v-theme--light {
+    --v-theme-background: 244,245,250,0.3;
+    --v-theme-surface: 255,255,255,0.3;
+}
+.v-theme--dark {
+    --v-theme-background: 17,24,39,0.1;
+    --v-theme-surface: 22,29,44,0.1;
+}
+.v-theme--purple {
+    --v-theme-background: 40,36,61,0.3;
+    --v-theme-surface: 49,45,75,0.3;
+}
+.v-theme--light, .v-theme--dark, .v-theme--purple {
+    --v-theme-primary: 110,102,237,0.8;
+    --v-theme-primary: 87,76,255,0.8;
+} */
 .v-application, .v-card--variant-elevated .v-list {
     background: none !important;
 }
