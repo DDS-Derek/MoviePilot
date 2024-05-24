@@ -6,7 +6,7 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/data \
     UMASK=022
 
 RUN pip install --upgrade pip && \
-    pip install playwright~=1.34.0 && \
+    pip install playwright~=1.37.0 && \
     playwright install chromium && \
     pip uninstall -y playwright && \
     rm -rf \
