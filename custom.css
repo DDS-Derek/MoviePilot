@@ -4,8 +4,10 @@
 html {
     background-attachment: fixed;
     background-size: cover;
-    /* 这边是壁纸居中，自己选择是否开启 */
+    /* 这边是背景图片居中，自己选择是否开启 */
     background-position: center;
+    /* 背景图片位置居中，顶部向上偏移250像素写法如下 */
+    /* background-position: center top -250px; */
     height: 100%;
 }
 @media (min-width: 768px) {
