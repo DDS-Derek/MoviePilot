@@ -40,7 +40,7 @@
 - [developer-wlj/Windows-MoviePilot](https://github.com/developer-wlj/Windows-MoviePilot)：exe方式运行MoviePilot
 - [honue/Shortcuts-Moviepilot](https://github.com/honue/Shortcuts-Moviepilot)：快捷指令快速跳转moviepilot搜索
 - [PTLSP/MoviePilot-Wechat-PROXY](https://blog.ptlsp.com/moviepilotwechat)：MoviePilot企业微信推送之新手喂饭教程
-- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins,https://github.com/thsrite/MoviePilot-Plugins,https://github.com/honue/MoviePilot-Plugins,https://github.com/dandkong/MoviePilot-Plugins,https://github.com/Aqr-K/MoviePilot-Plugins,https://github.com/AnjoyLi/MoviePilot-Plugins,https://github.com/WithdewHua/MoviePilot-Plugins,https://github.com/HankunYu/MoviePilot-Plugins,https://github.com/baozaodetudou/MoviePilot-Plugins,https://github.com/almus2zhang/MoviePilot-Plugins,https://github.com/Pixel-LH/MoviePilot-Plugins,https://github.com/InfinityPacer/MoviePilot-Plugins,https://github.com/lightolly/MoviePilot-Plugins`
+- MoviePilot-Plugins：MoviePilot插件市场 `PLUGIN_MARKET=https://github.com/jxxghp/MoviePilot-Plugins/,https://github.com/thsrite/MoviePilot-Plugins/,https://github.com/honue/MoviePilot-Plugins/,https://github.com/InfinityPacer/MoviePilot-Plugins/,https://github.com/dandkong/MoviePilot-Plugins/,https://github.com/Aqr-K/MoviePilot-Plugins/,https://github.com/AnjoyLi/MoviePilot-Plugins/,https://github.com/WithdewHua/MoviePilot-Plugins/,https://github.com/HankunYu/MoviePilot-Plugins/,https://github.com/baozaodetudou/MoviePilot-Plugins/,https://github.com/almus2zhang/MoviePilot-Plugins/,https://github.com/Pixel-LH/MoviePilot-Plugins/,https://github.com/lightolly/MoviePilot-Plugins/,https://github.com/suraxiuxiu/MoviePilot-Plugins/,https://github.com/gxterry/MoviePilot-Plugins/,https://github.com/kufei326/MoviePilot-Plugins/`
   - https://github.com/jxxghp/MoviePilot-Plugins
   - https://github.com/thsrite/MoviePilot-Plugins
   - https://github.com/honue/MoviePilot-Plugins
@@ -54,6 +54,9 @@
   - https://github.com/Pixel-LH/MoviePilot-Plugins
   - https://github.com/InfinityPacer/MoviePilot-Plugins
   - https://github.com/lightolly/MoviePilot-Plugins
+  - https://github.com/suraxiuxiu/MoviePilot-Plugins
+  - https://github.com/gxterry/MoviePilot-Plugins
+  - https://github.com/kufei326/MoviePilot-Plugins
 
 ## Star History
 
